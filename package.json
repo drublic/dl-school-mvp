@@ -1,0 +1,11 @@
+{
+  "name": "dl-mvp-development-with-ai",
+  "private": true,
+  "scripts": {
+    "start": "serve . -p 1338",
+    "dev": "serve . -p 1338"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
