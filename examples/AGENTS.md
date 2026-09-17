@@ -19,7 +19,7 @@ Local club race planner. Replaces the season Excel.
 
 Three categories: Amateure, Elite-Amateure, Frauen. A race has a name, weekday, date, and Meldeschluss. The start list is the names on that race. Cancelled races stay listed; riders stay as they are.
 
-Look: DSD wordmark, Bricolage headings, Lato body. Colours in [`startlist-shell.md`](startlist-shell.md). First change is that look on a running empty app. Then [`startlist-slice.md`](startlist-slice.md).
+Look: DSD wordmark, Bricolage headings, Lato body. Colours in [`startlist-shell.md`](startlist-shell.md). First change: that look plus a sticky header (nav, account placeholder) on a running empty app. Then [`startlist-slice.md`](startlist-slice.md).
 
 ## Next slices
 

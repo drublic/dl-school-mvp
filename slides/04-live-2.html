@@ -442,10 +442,10 @@
           </div>
         </section>
         <!-- ══════════════════════════════════════════════════════
-         SLIDE 27 — Archive
+         SLIDE — Bonus: Spec after the build
     ══════════════════════════════════════════════════════ -->
-        <section data-background-color="#ffffff">
-          <div class="slide-inner top">
+        <section data-background-color="#ffffff" data-slide-tag="bonus">
+          <div class="slide-inner top slide-compact">
             <div class="dl-header">
               <img alt="DL" src="images/dl-school-logo-icon.svg" />
               <div class="dl-header-text">
@@ -454,52 +454,91 @@
               </div>
             </div>
 
-            <span class="eyebrow">Live 2 · Archive</span>
-            <h2>Archive After Merge.</h2>
-            <div class="sdlc-rail" aria-label="SDLC progress">
-              <span class="sdlc-step is-done">1 Discover</span>
-              <span class="sdlc-step is-done">2 Design</span>
-              <span class="sdlc-step is-done">3 Build</span>
-              <span class="sdlc-step is-done">4 Verify</span>
-              <span class="sdlc-step is-later">5 Release</span>
-            </div>
-            <div
-              style="
-                background: #151616;
-                border-radius: var(--radius-md);
-                padding: 24px 28px;
-                margin: 8px 0 20px;
-              "
+            <span class="eyebrow">Live 2 · Bonus</span>
+            <h2>Code First. Spec After.</h2>
+            <p
+              class="speaker-lead"
+              style="font-size: 15px; margin: 0 0 14px; max-width: 820px"
             >
-              <div
-                style="
-                  font-family: &quot;JetBrains Mono&quot;, monospace;
-                  font-size: 22px;
-                  font-weight: 700;
-                  color: #27c93f;
-                "
-              >
-                /opsx-archive
+              The agents just shipped from Linear. No OpenSpec change. You can
+              still land the truth — write the change that should have come
+              first.
+            </p>
+            <div class="step-list" style="max-width: 900px">
+              <div class="step-item">
+                <span class="step-num">1</span>
+                <div>
+                  <div class="step-text">
+                    <code>/opsx-explore</code> · Read what landed
+                  </div>
+                  <div class="step-sub">
+                    Point at the PR or the files. Map behavior before you invent
+                    a proposal.
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <span class="step-num">2</span>
+                <div>
+                  <div class="step-text">
+                    <code>/opsx-propose</code> · Delta = what already shipped
+                  </div>
+                  <div class="step-sub">
+                    Requirements and scenarios for the live behavior. Not a
+                    rebuild plan.
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <span class="step-num">3</span>
+                <div>
+                  <div class="step-text">Review · then sync · archive</div>
+                  <div class="step-sub">
+                    Catch wrong turns in the write-up.
+                    <code>/opsx-sync</code> + <code>/opsx-archive</code> fold
+                    into <code>openspec/specs/</code>. Skip apply if the code is
+                    already there.
+                  </div>
+                </div>
               </div>
             </div>
-            <p
-              style="
-                font-size: 17px;
-                color: var(--color-gray-text);
-                max-width: 760px;
-              "
-            >
-              Specs don’t disappear after a feature ships. They compound — a
-              living record of what the system does and why. After a PR merges,
-              <code>/opsx-archive</code> lands the delta in
-              <code>openspec/specs/</code>. Tonight we name it — we do not wait
-              for both merges on stage.
-            </p>
             <aside class="notes">
-              Specs compound: after merge, archive. Cloud agents do not
-              archive. If one PR is already merged and you have 2 minutes,
-              run /opsx-archive. Otherwise say the command and stop.
+              Bonus only — do not run this live unless you have spare minutes.
+              Point: specs grow from real changes; brownfield works the same way
+              — explore the code, propose a delta that describes what exists,
+              review, sync, archive. Apply only if something is still missing.
+              Say “this is how you recover intent after a parallel PR.”
             </aside>
+            <p class="slide-source">
+              <a
+                href="https://openspec.dev/docs/existing-projects"
+                rel="noopener"
+                target="_blank"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.5 3.5H3.5A1.5 1.5 0 0 0 2 5v7.5A1.5 1.5 0 0 0 3.5 14H11a1.5 1.5 0 0 0 1.5-1.5V9.5"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-width="1.6"
+                  />
+                  <path
+                    d="M8.5 2.5H13.5V7.5M13.5 2.5 7 9"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.6"
+                  />
+                </svg>
+                <span class="slide-source-label">Docs</span>
+                openspec.dev · existing projects
+              </a>
+            </p>
           </div>
         </section>
         <!-- ══════════════════════════════════════════════════════
@@ -624,7 +663,7 @@
                 </div>
               </div>
               <div class="recap-phrases">
-                <div class="recap-phrase">Specs compound.</div>
+                <div class="recap-phrase">Parallel is coordination.</div>
                 <div class="recap-phrase">Own issue, own PR.</div>
                 <div class="recap-phrase">You still review.</div>
               </div>

@@ -32,4 +32,4 @@ If I try to put Jonas B. on Rund in Rheinbach, nothing changes and it has to be 
 
 Still later: hosting, entry-form URLs (Meldeschluss stays a deadline), Stichtage, rad-net polish, a proper test suite in CI.
 
-Keep the look from the shell. Do not invent a new brand.
+Keep the look and sticky header from the shell. Do not invent a new brand.

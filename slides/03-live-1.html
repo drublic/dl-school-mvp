@@ -317,8 +317,9 @@
     </div>
     <aside class="notes">
       Same three files as every review. Scope is DSD wordmark, Bricolage, Lato,
-      club colours, a title, it runs. If the proposal already has race
-      calendars, /opsx-update. Then apply. We do this checklist again on loop 2.
+      club colours, sticky header with nav + account placeholder, a title, it
+      runs. If the proposal already has race calendars or real login,
+      /opsx-update. Then apply. We do this checklist again on loop 2.
     </aside>
   </div>
 </section>
@@ -373,14 +374,139 @@
       </div>
     </div>
     <p style="font-size: 17px; color: var(--color-gray-text); max-width: 760px">
-      Stop when DSD is on cream and the app runs. No calendar yet. Build to the
-      blueprint — then the same loop for the slice.
+      Stop when DSD is on cream, the sticky header is there, and the app runs.
+      No calendar yet. Then sync the spec, archive, then the same loop for the
+      slice.
     </p>
     <aside class="notes">
       Command: /opsx-apply. Say “this change only: Startlist, DSD wordmark,
-      Bricolage, Lato, club colours, running. Empty is fine.” Show the browser.
+      Bricolage, Lato, club colours, sticky header with nav and account
+      placeholder, running. Empty below is fine.” Show the browser.
       If the agent starts building calendars, stop it — that is loop 2. Fast
-      win, then propose again.
+      win, then sync, then archive, then propose again.
+    </aside>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════════════
+         SLIDE — Sync loop 1
+    ══════════════════════════════════════════════════════ -->
+<section data-background-color="#ffffff">
+  <div class="slide-inner top">
+    <div class="dl-header">
+      <img alt="DL" src="images/dl-school-logo-icon.svg" />
+      <div class="dl-header-text">
+        <span class="dl-top">DIGITALE LEUTE</span>
+        <span class="dl-bottom">SCHOOL</span>
+      </div>
+    </div>
+
+    <span class="eyebrow">Live 1 · Loop 1 · Sync</span>
+    <h2>Sync the Spec.</h2>
+    <div class="sdlc-rail" aria-label="SDLC progress">
+      <span class="sdlc-step is-done">1 Discover</span>
+      <span class="sdlc-step is-done">2 Design</span>
+      <span class="sdlc-step is-active">3 Build</span>
+      <span class="sdlc-step">4 Verify</span>
+      <span class="sdlc-step is-later">5 Release</span>
+    </div>
+    <div
+      style="
+        background: #151616;
+        border-radius: var(--radius-md);
+        padding: 24px 28px;
+        margin: 8px 0 20px;
+      "
+    >
+      <div
+        style="
+          font-family: &quot;JetBrains Mono&quot;, monospace;
+          font-size: 22px;
+          font-weight: 700;
+          color: #27c93f;
+        "
+      >
+        /opsx-sync add-startlist-shell
+      </div>
+      <div
+        style="
+          color: rgba(255, 255, 255, 0.5);
+          margin-top: 8px;
+          font-size: 14px;
+        "
+      >
+        delta → openspec/specs/ · change stays open
+      </div>
+    </div>
+    <p style="font-size: 17px; color: var(--color-gray-text); max-width: 760px">
+      Merge the look into the main specs. The change is still active. Then
+      archive.
+    </p>
+    <aside class="notes">
+      Still Build. Command: /opsx-sync add-startlist-shell. Show git diff on
+      openspec/specs/. Do not archive yet — sync does not close the change. Then
+      the next slide.
+    </aside>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════════════
+         SLIDE — Archive loop 1
+    ══════════════════════════════════════════════════════ -->
+<section data-background-color="#ffffff">
+  <div class="slide-inner top">
+    <div class="dl-header">
+      <img alt="DL" src="images/dl-school-logo-icon.svg" />
+      <div class="dl-header-text">
+        <span class="dl-top">DIGITALE LEUTE</span>
+        <span class="dl-bottom">SCHOOL</span>
+      </div>
+    </div>
+
+    <span class="eyebrow">Live 1 · Loop 1 · Archive</span>
+    <h2>Archive the Shell.</h2>
+    <div class="sdlc-rail" aria-label="SDLC progress">
+      <span class="sdlc-step is-done">1 Discover</span>
+      <span class="sdlc-step is-done">2 Design</span>
+      <span class="sdlc-step is-done">3 Build</span>
+      <span class="sdlc-step">4 Verify</span>
+      <span class="sdlc-step is-later">5 Release</span>
+    </div>
+    <div
+      style="
+        background: #151616;
+        border-radius: var(--radius-md);
+        padding: 24px 28px;
+        margin: 8px 0 20px;
+      "
+    >
+      <div
+        style="
+          font-family: &quot;JetBrains Mono&quot;, monospace;
+          font-size: 22px;
+          font-weight: 700;
+          color: #27c93f;
+        "
+      >
+        /opsx-archive add-startlist-shell
+      </div>
+      <div
+        style="
+          color: rgba(255, 255, 255, 0.5);
+          margin-top: 8px;
+          font-size: 14px;
+        "
+      >
+        look lands in specs · then loop 2
+      </div>
+    </div>
+    <p style="font-size: 17px; color: var(--color-gray-text); max-width: 760px">
+      Specs compound. The shell is truth now. The next propose starts from there
+      — not from a leftover open change.
+    </p>
+    <aside class="notes">
+      Archive after sync. Command: /opsx-archive add-startlist-shell. The look
+      is already in openspec/specs/. Archive closes the change. Then
+      /opsx-propose add-race-startlist. Do not skip this or the agent may still
+      treat the shell as the active change.
     </aside>
   </div>
 </section>
@@ -431,9 +557,9 @@
       Same three steps. New change. Calendar, lists, SQLite. No code yet.
     </p>
     <aside class="notes">
-      New propose — not another apply on the shell. /opsx-propose
-      add-race-startlist. Point at examples/startlist-slice.md. Leave the shell
-      change as it is. Wait for the new proposal.md, then review.
+      New propose — after archive, not another apply on the shell. /opsx-propose
+      add-race-startlist. Point at examples/startlist-slice.md. Wait for the new
+      proposal.md, then review.
     </aside>
     <p class="slide-source">
       <a href="examples/startlist-slice.md" rel="noopener" target="_blank">
@@ -698,8 +824,8 @@
         max-width: 860px;
       "
     >
-      Tonight we run gates 1–2 live. Gates 3–4 are the production habit: the
-      OpenSpec hook, then the PR, tag
+      Gates 3 and 4 are the production habit: the OpenSpec hook, then the PR,
+      tag
       <code>@copilot</code>. CI / deploy stay later — the gate starts before
       push.
     </p>
@@ -739,13 +865,7 @@
     >
       Pass path first. Then the fail path. Both are the quality gate.
     </p>
-    <div
-      style="
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      "
-    >
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
       <div
         style="
           background: #151616;
@@ -781,8 +901,8 @@
           <span style="color: #5e95ff">When</span> I add “Leo K.” to that race
         </div>
         <div>
-          <span style="color: #27c93f">Then</span> “Leo K.” appears on the
-          start list
+          <span style="color: #27c93f">Then</span> “Leo K.” appears on the start
+          list
         </div>
         <div>And the participant count is 7</div>
       </div>
@@ -815,8 +935,7 @@
           cancelled” is on the calendar
         </div>
         <div>
-          <span style="color: #5e95ff">When</span> I add “Jonas B.” to that
-          race
+          <span style="color: #5e95ff">When</span> I add “Jonas B.” to that race
         </div>
         <div>
           <span style="color: #27c93f">Then</span> the start list does not
@@ -891,19 +1010,17 @@
       <div>
         <span style="color: #27c93f">$</span> npm install --save-dev husky
       </div>
+      <div><span style="color: #27c93f">$</span> npx husky init</div>
       <div>
-        <span style="color: #27c93f">$</span> npx husky init
+        <span style="color: #27c93f">$</span> echo "openspec validate --all
+        --strict --no-interactive" &gt; .husky/pre-push
       </div>
       <div>
-        <span style="color: #27c93f">$</span> echo "openspec validate --all --strict --no-interactive" &gt; .husky/pre-push
-      </div>
-      <div>
-        <span style="color: #27c93f">$</span> echo "openspec validate --archived --no-interactive" &gt;&gt; .husky/pre-push
+        <span style="color: #27c93f">$</span> echo "openspec validate --archived
+        --no-interactive" &gt;&gt; .husky/pre-push
       </div>
     </div>
-    <div
-      style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px"
-    >
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
       <div
         style="
           background: var(--color-gray-light);
@@ -956,11 +1073,7 @@
       agentic commit and push.
     </aside>
     <p class="slide-source">
-      <a
-        href="https://openspec.dev/docs/cli"
-        rel="noopener"
-        target="_blank"
-      >
+      <a href="https://openspec.dev/docs/cli" rel="noopener" target="_blank">
         <svg
           aria-hidden="true"
           fill="none"
@@ -1000,107 +1113,194 @@
       </div>
     </div>
 
-            <span class="eyebrow">Live 1 · Branch</span>
-            <h2>Commit the Slice. Push the Branch.</h2>
-            <div class="sdlc-rail" aria-label="SDLC progress">
-              <span class="sdlc-step is-done">1 Discover</span>
-              <span class="sdlc-step is-done">2 Design</span>
-              <span class="sdlc-step is-done">3 Build</span>
-              <span class="sdlc-step is-active">4 Verify</span>
-              <span class="sdlc-step is-later">5 Release</span>
-            </div>
-            <p
-              class="speaker-lead"
-              style="font-size: 15px; margin: 0 0 14px; max-width: 820px"
-            >
-              Cursor chat — not the terminal. You still read the diff. Never
-              <code>main</code>.
-            </p>
-            <div
-              style="
-                background: #151616;
-                border-radius: var(--radius-md);
-                padding: 20px 24px;
-                margin-bottom: 16px;
-                font-family: &quot;JetBrains Mono&quot;, monospace;
-                font-size: 15px;
-                line-height: 1.65;
-                color: rgba(255, 255, 255, 0.88);
-              "
-            >
-              <div
-                style="
-                  font-size: 11px;
-                  font-weight: 700;
-                  letter-spacing: 0.1em;
-                  text-transform: uppercase;
-                  color: #5e95ff;
-                  margin-bottom: 10px;
-                "
-              >
-                Cursor chat
-              </div>
-              <div style="color: #27c93f; font-weight: 700">
-                Commit both changes on add-race-startlist and push that branch.
-              </div>
-              <div style="margin-top: 8px">
-                Remote: github.com/drublic/dl-mvp-raceplanner
-              </div>
-              <div style="margin-top: 8px">
-                Show the diff first and wait. Do not commit to main. Do not
-                force-push. Do not open a PR yet.
-              </div>
-            </div>
-            <div
-              style="
-                padding: 14px 16px;
-                background: rgba(254, 211, 91, 0.18);
-                border-left: 3px solid var(--color-accent-yellow);
-                border-radius: 4px;
-                font-size: 15px;
-                max-width: 860px;
-              "
-            >
-              That push is what runs the OpenSpec hook. Then open a PR — Gate 4
-              is <code>@copilot</code> on that PR, not on <code>main</code>.
-            </div>
-            <aside class="notes">
-              Paste in Cursor. Approve git commit and git push — do not
-              auto-run. You are already on add-race-startlist from prep. Remote
-              is https://github.com/drublic/dl-mvp-raceplanner.git (private,
-              empty main). If origin is missing, let the agent add it. Never
-              push main. Gates 1–2 already ran in the app.
-            </aside>
-            <p class="slide-source">
-              <a
-                href="https://github.com/drublic/dl-mvp-raceplanner"
-                rel="noopener"
-                target="_blank"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="none"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.5 3.5H3.5A1.5 1.5 0 0 0 2 5v7.5A1.5 1.5 0 0 0 3.5 14H11a1.5 1.5 0 0 0 1.5-1.5V9.5"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-width="1.6"
-                  />
-                  <path
-                    d="M8.5 2.5H13.5V7.5M13.5 2.5 7 9"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.6"
-                  />
-                </svg>
-                <span class="slide-source-label">Repo</span>
-                github.com/drublic/dl-mvp-raceplanner
-              </a>
-            </p>
+    <span class="eyebrow">Live 1 · Branch</span>
+    <h2>Commit the Slice. Push the Branch.</h2>
+    <div class="sdlc-rail" aria-label="SDLC progress">
+      <span class="sdlc-step is-done">1 Discover</span>
+      <span class="sdlc-step is-done">2 Design</span>
+      <span class="sdlc-step is-done">3 Build</span>
+      <span class="sdlc-step is-active">4 Verify</span>
+      <span class="sdlc-step is-later">5 Release</span>
+    </div>
+    <p
+      class="speaker-lead"
+      style="font-size: 15px; margin: 0 0 14px; max-width: 820px"
+    >
+      Cursor chat — not the terminal. You still read the diff. Never
+      <code>main</code>.
+    </p>
+    <div
+      style="
+        background: #151616;
+        border-radius: var(--radius-md);
+        padding: 20px 24px;
+        margin-bottom: 16px;
+        font-family: &quot;JetBrains Mono&quot;, monospace;
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.88);
+      "
+    >
+      <div
+        style="
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #5e95ff;
+          margin-bottom: 10px;
+        "
+      >
+        Cursor chat
+      </div>
+      <div style="color: #27c93f; font-weight: 700">
+        Commit both changes on add-race-startlist and push that branch.
+      </div>
+      <div style="margin-top: 8px">
+        Remote: github.com/drublic/dl-mvp-raceplanner
+      </div>
+    </div>
+    <div
+      style="
+        padding: 14px 16px;
+        background: rgba(254, 211, 91, 0.18);
+        border-left: 3px solid var(--color-accent-yellow);
+        border-radius: 4px;
+        font-size: 15px;
+        max-width: 860px;
+      "
+    >
+      That push is what runs the OpenSpec hook. Never <code>main</code>. Then
+      open a PR.
+    </div>
+    <aside class="notes">
+      Paste in Cursor. Approve git commit and git push — do not auto-run. You
+      are already on add-race-startlist from prep. Remote is
+      https://github.com/drublic/dl-mvp-raceplanner.git (private, empty main).
+      If origin is missing, let the agent add it. Never push main. Gates 1–2
+      already ran in the app. Next slide: @copilot on the PR.
+    </aside>
+    <p class="slide-source">
+      <a
+        href="https://github.com/drublic/dl-mvp-raceplanner"
+        rel="noopener"
+        target="_blank"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.5 3.5H3.5A1.5 1.5 0 0 0 2 5v7.5A1.5 1.5 0 0 0 3.5 14H11a1.5 1.5 0 0 0 1.5-1.5V9.5"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="1.6"
+          />
+          <path
+            d="M8.5 2.5H13.5V7.5M13.5 2.5 7 9"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.6"
+          />
+        </svg>
+        <span class="slide-source-label">Repo</span>
+        github.com/drublic/dl-mvp-raceplanner
+      </a>
+    </p>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════════════
+         SLIDE — @copilot on the PR
+    ══════════════════════════════════════════════════════ -->
+<section data-background-color="#ffffff">
+  <div class="slide-inner top">
+    <div class="dl-header">
+      <img alt="DL" src="images/dl-school-logo-icon.svg" />
+      <div class="dl-header-text">
+        <span class="dl-top">DIGITALE LEUTE</span>
+        <span class="dl-bottom">SCHOOL</span>
+      </div>
+    </div>
+
+    <span class="eyebrow">Live 1 · Gate 4</span>
+    <h2><code>@copilot</code> on the PR.</h2>
+    <div class="sdlc-rail" aria-label="SDLC progress">
+      <span class="sdlc-step is-done">1 Discover</span>
+      <span class="sdlc-step is-done">2 Design</span>
+      <span class="sdlc-step is-done">3 Build</span>
+      <span class="sdlc-step is-active">4 Verify</span>
+      <span class="sdlc-step is-later">5 Release</span>
+    </div>
+    <div
+      style="
+        background: #151616;
+        border-radius: var(--radius-md);
+        padding: 24px 28px;
+        margin: 8px 0 20px;
+      "
+    >
+      <div
+        style="
+          font-family: &quot;JetBrains Mono&quot;, monospace;
+          font-size: 22px;
+          font-weight: 700;
+          color: #27c93f;
+        "
+      >
+        @copilot
+      </div>
+      <div
+        style="
+          color: rgba(255, 255, 255, 0.5);
+          margin-top: 8px;
+          font-size: 14px;
+        "
+      >
+        comment on the GitHub PR · not on main
+      </div>
+    </div>
+    <p style="font-size: 17px; color: var(--color-gray-text); max-width: 760px">
+      A review pass. You still own merge. CI / deploy stay later.
+    </p>
+    <aside class="notes">
+      Open the PR from the branch you just pushed. Comment @copilot. Read what
+      it says. Do not merge on stage unless the diff is tiny and you have time.
+      Gate 4 is the habit: a second agent reviews the PR, the human still
+      decides.
+    </aside>
+    <p class="slide-source">
+      <a
+        href="https://github.com/drublic/dl-mvp-raceplanner"
+        rel="noopener"
+        target="_blank"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.5 3.5H3.5A1.5 1.5 0 0 0 2 5v7.5A1.5 1.5 0 0 0 3.5 14H11a1.5 1.5 0 0 0 1.5-1.5V9.5"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="1.6"
+          />
+          <path
+            d="M8.5 2.5H13.5V7.5M13.5 2.5 7 9"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.6"
+          />
+        </svg>
+        <span class="slide-source-label">Repo</span>
+        github.com/drublic/dl-mvp-raceplanner
+      </a>
+    </p>
   </div>
 </section>
 <!-- ══════════════════════════════════════════════════════
@@ -1130,16 +1330,15 @@
         <div class="recap-takeaway">
           <span class="mark">→</span>
           <p>
-            Two loops. Structure intent, catch wrong turns, build to the
-            blueprint. Shell first, then Leo K. on <em>Rund um Merken</em>.
-            Jonas B. on cancelled <em>Rund in Rheinbach</em>.
+            Two loops. Sync, then archive the shell before the second propose.
           </p>
         </div>
         <div class="recap-takeaway">
           <span class="mark">→</span>
           <p>
             Pre-push runs OpenSpec, then lint · typecheck · test. Push the
-            branch — never <code>main</code>.
+            branch — never <code>main</code>. Then <code>@copilot</code> on
+            the PR.
           </p>
         </div>
       </div>

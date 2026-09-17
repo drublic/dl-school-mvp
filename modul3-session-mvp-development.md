@@ -89,25 +89,28 @@ Speaker view: press **S**. Notes are on the live slides. The deck does not carry
 1. **Loop 1 — propose:** in Cursor chat, hyphen not colon:  
    `/opsx-propose add-startlist-shell`  
    Point at [`examples/startlist-shell.md`](examples/startlist-shell.md). Do not run `openspec` in the terminal.
-2. **Loop 1 — review:** scope is look + running empty app. If calendars or Startgeld are in the proposal, `/opsx-update`.
-3. **Loop 1 — apply:** `/opsx-apply`. Stop when DSD is on cream and the app runs. No calendar yet. Show the **browser**, not the chat.
-4. **Loop 2 — propose:** `/opsx-propose add-race-startlist`  
+2. **Loop 1 — review:** scope is look + sticky header (nav, account placeholder) + running empty app. If calendars, Startgeld, or real login are in the proposal, `/opsx-update`.
+3. **Loop 1 — apply:** `/opsx-apply`. Stop when DSD is on cream, the sticky header is there, and the app runs. No calendar yet. Show the **browser**, not the chat.
+4. **Loop 1 — sync:** `/opsx-sync add-startlist-shell`. Still Build. Delta lands in `openspec/specs/`; the change stays open. Show the diff.
+5. **Loop 1 — archive:** `/opsx-archive add-startlist-shell`. Closes the change before the next propose.
+6. **Loop 2 — propose:** `/opsx-propose add-race-startlist`  
    Point at [`examples/startlist-slice.md`](examples/startlist-slice.md). New change, not another apply on the shell.
-5. **Loop 2 — review:** if the proposal invents `interested | registered | DNS`, or “sync live with the Google Sheet” — that is not the Excel. The Excel is a **name in a Fahrer column**, on Amateure / Elite / Frauen tabs.  
+7. **Loop 2 — review:** if the proposal invents `interested | registered | DNS`, or “sync live with the Google Sheet” — that is not the Excel. The Excel is a **name in a Fahrer column**, on Amateure / Elite / Frauen tabs.  
    Fix: `/opsx-update`. Auth and Startgeld stay later (Live 2). Hosting stays after tonight.  
    If the agent was clean, still point at Out of scope and say you almost built Startgeld as task 1.
-6. **Loop 2 — apply:** `/opsx-apply`. Seed: *Rund um Merken*, 6 riders. Then the quality gate.
-7. **Scenario to pass (on the check slide):**  
+8. **Loop 2 — apply:** `/opsx-apply`. Seed: *Rund um Merken*, 6 riders. Then the quality gate.
+9. **Scenario to pass (on the check slide):**  
    Given Amateur calendar includes “Rund um Merken” on 29.03.  
    And the start list has 6 riders  
    When I add “Leo K.”  
    Then she is on the list and the count is 7.
-8. **Fail on purpose:** add “Jonas B.” to cancelled *Rund in Rheinbach*. Spec: cancelled races do not accept riders. If it already refuses, fail the count instead (add a rider, `#` stays 6). Paste the UI/error, point at the spec, tight prompt — no new vibe.
-9. **Commit + push:** Cursor chat (not `$ git`). Both changes on branch `add-race-startlist` → [dl-mvp-raceplanner](https://github.com/drublic/dl-mvp-raceplanner). You read the diff. Never `main`.
+10. **Fail on purpose:** add “Jonas B.” to cancelled *Rund in Rheinbach*. Spec: cancelled races do not accept riders. If it already refuses, fail the count instead (add a rider, `#` stays 6). Paste the UI/error, point at the spec, tight prompt — no new vibe.
+11. **Commit + push:** Cursor chat (not `$ git`). Both changes on branch `add-race-startlist` → [dl-mvp-raceplanner](https://github.com/drublic/dl-mvp-raceplanner). You read the diff. Never `main`.
+12. **Gate 4 — `@copilot`:** open the PR, comment `@copilot`. Read the review. You still own merge. Do not merge on stage unless the diff is tiny.
 
 ### Trainer notes — Live 2 (1:55–2:35)
 
 1. Linear issue A (Startgeld reimbursement) → assign **Cursor**. Immediately issue B (club login) → assign **Cursor**. Let them run. Brief: [`examples/startlist-next.md`](examples/startlist-next.md).
 2. Both descriptions: `Follow AGENTS.md` · `Follow openspec/changes/add-race-startlist/` and `Read examples/startlist-next.md`. No hosting.
 3. PRs land on [dl-mvp-raceplanner](https://github.com/drublic/dl-mvp-raceplanner). You merge. They don’t.
-4. `/opsx-archive` after merge — name it; don’t wait for both PRs. Deploy / remote CI / refactor = not tonight.
+4. No `/opsx-archive` on stage — Live 2 ships from Linear briefs, not a new OpenSpec change. **Bonus (if time):** after the PR, `/opsx-explore` → `/opsx-propose` (delta = what already shipped) → review → `/opsx-sync` + `/opsx-archive`. Skip apply if the code is already there. Deploy / remote CI / refactor = not tonight.
